@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      sqlite_orm_generator:
+        enabled: true
+
+builders:
+  generators:
+    import: "package:sqlite_orm_generator/sqlite_orm_generator.dart"
+    builder_factories: ["tableBuilder"]
+    build_extensions: { ".dart": [".state_object_generator.g.part"] }
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
