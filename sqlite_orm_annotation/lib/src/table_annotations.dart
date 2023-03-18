@@ -23,7 +23,7 @@ class Column<T> {
   final String? name;
   final bool primaryKey;
   final bool autoincrement;
-  final bool notNull;
+  final bool? notNull;
   final int? length;
   final int decimal;
   final T? defaultValue;
@@ -38,7 +38,7 @@ class Column<T> {
     this.name,
     this.primaryKey = false,
     this.autoincrement = false,
-    this.notNull = false,
+    this.notNull,
     this.length,
     this.decimal = 2,
     this.defaultValue,
